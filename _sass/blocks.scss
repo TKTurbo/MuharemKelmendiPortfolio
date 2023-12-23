@@ -1,0 +1,32 @@
+/*
+Use media queries like this:
+ @include media-query($on-size) {
+   .wrapper {
+     padding-right: $spacing-unit / 2;
+     padding-left: $spacing-unit / 2;
+   }
+ }
+*/
+
+@mixin media-query($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: #{$ratio}rem;
+}
+
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+%no-link-style {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+

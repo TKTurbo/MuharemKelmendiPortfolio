@@ -1,8 +1,5 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
 
-# Welkom op mijn portfolio!
+# Welkom op mijn portfolio! Op deze plek kunt u al mijn kunstwerken aanschouwen.
