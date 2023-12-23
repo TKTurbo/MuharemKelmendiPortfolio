@@ -1,0 +1,16 @@
+.header {
+  border-bottom: 1px solid $border-color;
+  min-height: $spacing-unit * 1.865;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  position: relative;
+  background-color: $primary-color;
+}
+
+.header-title {
+  color: $text-color;
+  margin: 0 0 0 0;
+}
+
+.header-title > a {
+  @extend %no-link-style;
+}

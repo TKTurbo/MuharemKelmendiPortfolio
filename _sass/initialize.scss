@@ -1,5 +1,5 @@
-$primary-color: red;
-$secondary-color: blue;
-
-@import "base.scss";
-@import "layout.scss";
+@charset "utf-8";
+@import "variables";
+@import "blocks";
+@import "base";
+@import "layout/layout";
