@@ -1,5 +1,17 @@
 <header class="header">
-    <div class="wrapper">
-        <h1 class="header-title"><a href="/">{{ site.title }}</a></h1>
-    </div>
+    <h1 class="header-title"><a href="/">{{ site.title }}</a></h1>
+    <nav>
+        <input type="checkbox" id="togglenav" class="menu-toggle">
+
+        <div class="collapse">
+            <ul class="main-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/gallery">Gallerij</a></li>
+            </ul>
+        </div>
+
+        <label for="togglenav" class="menu-toggle-ui">
+        </label>
+    </nav>
+    </section>
 </header>

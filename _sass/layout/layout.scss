@@ -6,7 +6,7 @@
   padding-left: $spacing-unit * .5;
   @extend %clearfix;
 
-  @media screen and (min-width: $on-large) {
+  @media screen and (min-width: $on-lg) {
     max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
