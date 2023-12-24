@@ -1,0 +1,20 @@
+---
+layout: base
+---
+
+<div>
+    {{ content }}
+
+    <div class="gallery">
+        {% assign artworks = site.posts | where: "categories", "art" %}
+        {%- for artwork in artworks -%}
+
+        <div class="artwork">
+            <a href="{{ artwork.url | relative_url }}">
+                <img src="{{ artwork.image }}" alt="{{ artwork.title }}">
+            </a>
+            <div class="desc">{{ artwork.title }}</div>
+        </div>
+        {%- endfor -%}
+    </div>
+</div>

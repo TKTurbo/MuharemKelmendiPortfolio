@@ -1,16 +1,137 @@
 .header {
-  border-bottom: 1px solid $border-color;
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
   position: relative;
   background-color: $primary-color;
+  display: flex;
+  flex-direction: row;
 }
 
 .header-title {
-  color: $text-color;
-  margin: 0 0 0 0;
+  color: white;
+  margin: 0 100px 0 10px;
 }
 
 .header-title > a {
   @extend %no-link-style;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.menu-toggle {
+  display:none;
+
+  &:checked{
+    &~ .collapse {
+      height: 300px;
+    }
+    &~ .menu-toggle-ui:after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.menu-toggle-ui {
+  height: 0;
+  width: 0;
+  font: 0/0 a;
+  position: absolute;
+  top: 2px; right: 55px;
+
+  &:after {
+    position: absolute;
+    content: '\2630';
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transition: 250ms ease-in-out all;
+    color: white;
+    font-size: 38px;
+    line-height: 52px;
+  }
+  @media screen and (min-width: 1200px){
+    display:none;
+  }
+}
+
+.collapse {
+  overflow-y: hidden;
+  height: 0;
+  transition: 500ms height;
+  left: 0;
+  top:52px;
+  width: 100%;
+  position: absolute;
+}
+
+.main-menu {
+  list-style:none;
+  padding: 0;
+  margin: 0;
+  > li a {
+    display:block;
+    font-size: 1em;
+    line-height: 3em;
+    padding: 0 1em;
+    background-color: $secondary-color;
+    color: #fff;
+    transition: 500ms background-color, 500ms color;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @extend %no-link-style;
+    &:hover {
+      background-color: white !important;
+      color: #000;
+    }
+  }
+  > li{
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    &:nth-child(even) a {
+      background-color: $primary-color;
+    }
+  }
+}
+
+/*@media screen and (min-width: 1200px){*/
+@include media-query($on-md) {
+  .menu-toggle-ui {
+    display: none;
+  }
+
+  .collapse {
+    position: static;
+    transition: 0ms all;
+    height: inherit;
+    top: 0;
+  }
+
+  .main-menu {
+    display: inline-block;
+    float:left;
+  }
+
+  .main-menu > li {
+    display: inline-block;
+
+    a,
+    &:nth-child(even) a {
+      background-color: transparent;
+      line-height: 52px;
+    }
+
+    a:hover {
+      background-color: white !important;
+      color: #000;
+    }
+  }
 }
