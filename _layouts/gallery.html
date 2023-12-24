@@ -10,8 +10,8 @@ layout: base
         {%- for artwork in artworks -%}
 
         <div class="artwork">
-            <a href="{{ artwork.url | relative_url }}">
-                <img src="{{ artwork.image }}" alt="{{ artwork.title }}">
+            <a href="{{ artwork.url | absolute_url }}">
+                <img src="{{ artwork.image | absolute_url }}" alt="{{ artwork.title }}">
             </a>
             <div class="desc">{{ artwork.title }}</div>
         </div>
